@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BeeLivery 🍰</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <!-- arquivo de logo: use esse caminho local conforme combinado -->
+      <img src="logossssss.jpeg" alt="Logo BeeLivery" class="logo">
+      <div class="brand-text">
+        <h1>BeeLivery</h1>
+        <small>Delivery de doces artesanais — Projeto acadêmico</small>
+      </div>
+    </div>
+
+    <nav class="menu" role="navigation" aria-label="Menu principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#acessibilidade">Acessibilidade</a>
+      <a href="#contato">Contato</a>
+      <button id="themeToggleTop" class="btn-ico" aria-label="Alternar tema">🌙</button>
+      <button id="abrirCatalogoTop" class="btn primary">Peça agora</button>
+      <button id="abrirCarrinhoTop" class="btn-cart" title="Abrir carrinho">🛒 <span id="countTop">0</span></button>
+    </nav>
+  </header>
+
+  <section class="produtos-destaque">
+    <h2 class="titulo-secao">Nossos Doces</h2>
+
+    <div class="grid-produtos">
+
+        <div class="produto">
+            <img src="cupika cake.jpeg" alt="Cupcake Morango">
+            <p>Cupcake Morango</p>
+        </div>
+
+        <div class="produto">
+            <img src="bolos.jpeg" alt="Bolo Chocolate">
+            <p>Bolo Chocolate</p>
+        </div>
+
+        <div class="produto">
+            <img src="dounouts.jpeg" alt="Caixa Donuts (6)">
+            <p>Caixa Donuts (6)</p>
+        </div>
+
+        <div class="produto">
+            <img src="lemoun peper.jpeg" alt="Torta Limão">
+            <p>Torta Limão</p>
+        </div>
+
+        <div class="produto">
+            <img src="brownie.jpeg" alt="Brownie (un)">
+            <p>Brownie (un)</p>
+        </div>
+
+    </div>
+</section>
+
+  <!-- HERO: faixa amarela central -->
+  <div class="hero-wrapper">
+    <section class="hero" role="banner" aria-label="Apresentação">
+      <div class="hero-card">
+        <h2>BeeLivery</h2>
+        <p class="lead">🍯 A doçura que chega até você!</p>
+        <div class="hero-actions">
+          <button id="btnPedirTop" class="btn primary">Peça agora</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  
+
+
+  <main class="container">
+    <!-- Sobre -->
+    <section id="sobre" class="panel">
+      <h3>Sobre a BeeLivery</h3>
+      <p class="small">
+        Na correria do dia a dia, todo mundo merece uma pausa doce. A BeeLivery nasceu exatamente disso: da vontade de entregar não só um produto, mas um momento gostoso. Aqui, cada doce é escolhido com carinho, preparado com cuidado e entregue com a rapidez de quem entende que vontade não espera. 
+        <br> <br>A gente acredita que um simples doce pode mudar o clima de um dia inteiro — pode animar, reconfortar, celebrar ou até virar aquele mimo que você decide dar a si mesmo. <br><br>Por isso, criamos um sistema de delivery simples, ágil e pensado para facilitar sua vida.
+
+Com a BeeLivery, você recebe qualidade, sabor e praticidade na porta de casa.
+      </p>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="panel">
+      <h3>O que oferecemos 🍩</h3>
+      <ul class="bullets">
+        <li>📦 Entregas rápidas e seguras</li>
+        <li>🍰 Catálogo de doces e confeitos</li>
+        <li>💳 Pagamento fácil e rápido</li>
+      </ul>
+    </section>
+
+    <!-- Acessibilidade -->
+    <section id="acessibilidade" class="panel">
+      <h3>Acessibilidade 💛</h3>
+      <p class="small">
+        Recursos inclusivos: modo alto contraste, suporte a leitores de tela, fontes legíveis e linguagem clara.
+      </p>
+      <div class="controls">
+        <button id="toggleContraste" class="btn">Ativar alto contraste</button>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <small>🐝 BeeLivery © 2025 — Projeto Acadêmico</small>
+  </footer>
+
+  <div id="toast" class="toast" aria-live="polite" role="status"></div>
+
+  <script src="java.js"></script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* empurra o footer pra baixo */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root{
+  --marrom: #584203;
+  --amarelo: #FFD166;
+  --rosa: #8B5E3C;
+  --bege: #ecdfb4;
+  --muted: #dd9300;
+  --card: #FFFFFF;
+  --maxw: 1200px;
+  --radius: 10px;
+  --shadow: 0 8px 22px rgba(75,47,38,0.06);
+}
+
+/* reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background:var(--bege);
+  color:var(--marrom);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* topbar */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:8px 18px;
+  background:var(--rosa);
+  position:sticky;
+  top:0;
+  z-index:60;
+  box-shadow:0 1px 0 rgba(0,0,0,0.04);
+}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{height:48px;border-radius:6px;object-fit:cover}
+.logo.small{height:40px}
+.brand-text h1{margin:0;font-size:1rem}
+.brand-text small{display:block;color:var(--muted);font-size:0.8rem}
+
+/* menu */
+.menu{display:flex;align-items:center;gap:10px}
+.menu a{color:#fff;text-decoration:none;padding:6px 8px;border-radius:6px;font-weight:600}
+.btn{padding:8px 12px;border-radius:8px;border:none;cursor:pointer;font-weight:600}
+.btn.primary{background:var(--marrom);color:#fff}
+.btn-ico{background:transparent;border:none;cursor:pointer;font-size:18px;color:#fff}
+.btn-cart{background:transparent;border:none;cursor:pointer;font-size:18px;color:#fff}
+
+/* hero */
+.hero-wrapper{background:var(--rosa)}
+.hero{max-width:var(--maxw);margin:0 auto;padding:36px 18px 60px;display:flex;justify-content:center}
+.hero-card{background:var(--amarelo);border-radius:12px;padding:28px 34px;box-shadow:var(--shadow);text-align:center;min-width:280px}
+.hero-card h2{margin:0;color:#2a170f;font-size:28px}
+.hero-card .lead{margin:8px 0 16px;color:#3b2a24}
+.hero-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+
+/* main container */
+.container{max-width:var(--maxw);margin:22px auto;padding:0 18px}
+.panel{background:transparent;padding:18px;margin-bottom:14px;border-radius:8px}
+.panel h3{margin-bottom:8px}
+.small{color:var(--muted);font-size:0.95rem}
+
+/* bullets */
+.bullets{list-style:none;padding:0;display:block;text-align:left;max-width:700px;margin:12px auto}
+.bullets li{padding:6px 0;font-size:1rem}
+
+/* catalogo */
+.catalog-controls{display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
+.catalog-controls input[type=search], .catalog-controls select{padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.08)}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.card-product{background:var(--card);padding:12px;border-radius:8px;box-shadow:var(--shadow);text-align:center}
+.card-product img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+.card-product h3{margin:10px 0 6px}
+.card-product .price{color:var(--marrom);font-weight:700}
+
+/* forms */
+.contact-form{display:flex;flex-direction:column;gap:10px;max-width:520px;margin:6px auto}
+input, textarea{padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.08);font-size:1rem}
+textarea{min-height:100px;resize:vertical}
+
+/* cart */
+.cart-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
+
+/* footer */
+.footer {
+    width: 100%;
+    background: var(--rosa);
+    color: #fff;
+    padding: 14px 0;
+    text-align: center;
+    margin-top: 18px;
+    border-top: 4px solid rgba(0,0,0,0.03);
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
+
+/* toast */
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:18px;background:var(--marrom);color:#fff;padding:8px 12px;border-radius:8px;opacity:0;pointer-events:none;transition:all .25s}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(-6px);pointer-events:auto}
+
+/* alto contraste (acessibilidade) */
+.alto-contraste{background:#1a1a1a !important;color:#ffffff !important}
+.alto-contraste .topbar{background:#333 !important}
+.alto-contraste .footer{background:#333 !important}
+.alto-contraste button{background:color: #000 !important}
+
+/* dark theme: */
+body.dark{
+  --marrom:#7a4a0b;
+  background:#252525;
+  color:#f1ca92;
+}
+body.dark .topbar{background:#222}
+body.dark .menu a{color:#fff}
+body.dark .hero-card{background:var(--amarelo); box-shadow: 0 10px 30px rgba(0,0,0,0.6); color:#fcfcfc}
+body.dark .footer{background:#222;color:#ddd}
+
+/* responsive */
+@media (max-width:720px){
+  .menu{gap:6px}
+  .logo{height:40px}
+  .hero-card{padding:20px}
+  .brand-text h1{font-size:0.95rem}
+}
+
+.produtos-destaque {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.titulo-secao {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.grid-produtos {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.produto {
+    width: 160px;
+    text-align: center;
+}
+
+.produto img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    transition: transform .2s;
+}
+
+.produto img:hover {
+    transform: scale(1.05);
+}
+
+
+@media (max-width: 480px) {
+
+  /* Deixa o header mais compacto */
+  .topbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  /* Marca + logo reduzidos */
+  .brand.small h1 {
+    font-size: 20px;
+  }
+
+  .logo.small {
+    width: 45px;
+    height: 45px;
+  }
+
+  /* Menu fica alinhado no centro */
+  .menu {
+    display: flex;
+    gap: 15px;
+  }
+
+  .menu a {
+    font-size: 14px;
+  }
+
+  /* Container ocupa quase a tela toda */
+  .container {
+    width: 95%;
+    margin: auto;
+  }
+
+  /* Botões maiores para tocar com o dedo */
+  .btn, .btn.primary {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  /* Cards do catálogo ficam em coluna */
+  .card {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+.card img,
+.produto img,
+.item img {
+  width: 100%;  
+  height: 180px;  
+  object-fit: cover; 
+  border-radius: 10px; 
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.products-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+

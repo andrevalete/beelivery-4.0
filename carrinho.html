@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>BeeLivery — Carrinho</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand small">
+      <img src="logossssss.jpeg" alt="BeeLivery" class="logo small">
+      <div class="brand-text"><h1>BeeLivery</h1><small>Carrinho</small></div>
+    </div>
+
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="catalogo.html">Catálogo</a>
+      <button id="themeToggleCart" class="btn-ico">🌙</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h3>Seu Carrinho</h3>
+      <div id="cartContainer">
+        <!-- itens e total são renderizados pelo JS -->
+      </div>
+
+      <div class="cart-actions">
+        <button id="clearCartBtn" class="btn">Limpar carrinho</button>
+        <button id="checkoutBtn" class="btn primary">Finalizar pedido no WhatsApp</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>BeeLivery — Projeto Acadêmico</small>
+  </footer>
+
+  <div id="toast" class="toast" aria-live="polite" role="status"></div>
+  <script src="java.js"></script>
+</body>
+</html>

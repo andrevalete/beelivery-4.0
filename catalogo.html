@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BeeLivery — Catálogo</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand small">
+      <img src="logossssss.jpeg" alt="BeeLivery" class="logo small">
+      <div class="brand-text"><h1>BeeLivery</h1><small>Catálogo</small></div>
+    </div>
+
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <button id="themeToggleCat" class="btn-ico">🌙</button>
+      <button id="abrirCarrinhoCat" class="btn-cart">🛒 <span id="countCat">0</span></button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <div class="catalog-controls">
+        <input id="searchInput" type="search" placeholder="Buscar produto..." aria-label="Buscar produtos">
+        <select id="filterCat" aria-label="Filtrar categoria">
+          <option value="all">Todas</option>
+          <option value="bolos">Bolos</option>
+          <option value="cupcakes">Cupcakes</option>
+          <option value="doces">Doces</option>
+        </select>
+        <button id="openCartBtn" class="btn">Abrir carrinho</button>
+      </div>
+
+      <section id="productsGrid" class="products-grid" aria-live="polite">
+        <!-- preenchido via JS -->
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>BeeLivery — Catálogo de demonstração</small>
+  </footer>
+
+  <div id="toast" class="toast" aria-live="polite" role="status"></div>
+  <script src="java.js"></script>
+</body>
+</html>
