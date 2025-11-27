@@ -68,6 +68,7 @@ function readCart() {
     return [];
   }
 }
+
 function writeCart(cart) {
   localStorage.setItem(CART_KEY, JSON.stringify(cart));
   updateCounters();
@@ -223,7 +224,18 @@ function clearCart() {
 }
 
 function openWhatsAppLink() {
-  window.open("https://wa.link/nazqhe", "_blank");
+  const cart = readCart();
+
+  cartMessage = cart.map((item) => {
+    return ` ${item.qty} ${item.name}`;
+  });
+
+  const message = `Olá, gostaria de fazer o seguinte pedido: ${cartMessage}.`;
+  const encodedMessage = encodeURIComponent(message);
+
+  const url = `https://wa.me/557399636594?text=${encodedMessage}`;
+
+  window.open(url, "_blank");
 }
 
 /* iniciar DOM */
@@ -305,12 +317,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     const checkout = document.getElementById("checkoutBtn");
+    const cart = readCart();
     if (checkout)
       checkout.addEventListener("click", () => {
-        openWhatsAppLink(); // abre o link do wa.link
-        writeCart([]); // limpa o carrinho
         renderCartPage();
-        toast("Redirecionando para o WhatsApp...");
+
+        if (cart.length === 0) {
+          toast("Seu carrinho está vazio.");
+          return;
+        }
+
+        openWhatsAppLink(); // abre o link do wa.link
       });
   }
 
